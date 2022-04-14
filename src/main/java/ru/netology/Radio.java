@@ -8,23 +8,39 @@ public class Radio {
         return numberStation;
     }
 
+    public int getVolume() {
+        return volume;
+    }
+
     public void setNumberStation(int numberStation) {
-        if(numberStation > 9){
+        if (numberStation > 9) {
             return;
         }
-        if(numberStation < 0){
+        if (numberStation < 0) {
             return;
         }
         this.numberStation = numberStation;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
+    public void upStation(int numberStation) {
+        if (numberStation >= 0) {
+            this.numberStation = numberStation + 1;
+        }
+        if (numberStation == 10) {
+            this.numberStation = 0;
+        }
     }
 
-    public int getVolume() {
-        return volume;
+    public void downStation(int numberStation) {
+        if (numberStation <= 10) {
+            this.numberStation = numberStation - 1;
+        }
+        if (numberStation == 0) {
+            this.numberStation = 10;
+        }
+
     }
+
 
     public void upVolume(int volume) {
         if (volume >= 0) {
