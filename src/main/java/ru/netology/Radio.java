@@ -35,22 +35,19 @@ public class Radio {
     }
 
     public void upNumberStation() {
-        if (numberStation < 9) {
-            numberStation = numberStation + 1;
-        }
         if (numberStation == 9) {
             numberStation = 0;
+            return;
         }
-
+            numberStation = numberStation + 1;
     }
 
     public void downNumberStation() {
-        if (numberStation > 0) {
-            numberStation = numberStation - 1;
-        }
         if (numberStation == 0) {
             numberStation = 9;
+            return;
         }
+            numberStation = numberStation - 1;
     }
 
     public void upVolume() {
